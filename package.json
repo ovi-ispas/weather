@@ -1,0 +1,15 @@
+{
+  "name": "@weather/root",
+  "private": true,
+  "version": "0.0.1",
+  "description": "UI Lib Monorepo Root",
+  "scripts": {
+    "ls-deps": "pnpm ls -r"
+  },
+  "keywords": [
+    "UI Lib",
+    "Monorepo"
+  ],
+  "author": "Ovi Ispas <ovi.ispas@ovi.is>",
+  "license": "MIT"
+}
