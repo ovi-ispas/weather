@@ -14,10 +14,15 @@ import './tailwind.css'
 import {
   ActionFunctionArgs,
   LoaderFunctionArgs,
+  MetaFunction,
   json,
   redirect,
 } from '@remix-run/node'
 import { Button, cn } from '~ui'
+
+export const meta: MetaFunction = () => {
+  return [{ title: 'Weather App | Home' }, { description: 'Weather App' }]
+}
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const cookieHeader = request.headers.get('Cookie')

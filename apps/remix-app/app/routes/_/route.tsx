@@ -50,6 +50,7 @@ export default function Layout() {
       <div className="ui-flex-1 ui-px-4">
         <Form action="/">
           <Input
+            aria-label="City name"
             className="ui-mx-auto ui-block ui-my-8 ui-max-w-72"
             ref={inputRef}
             type="text"
@@ -76,7 +77,7 @@ function QuickLinks() {
           to="/bucuresti"
           className={({ isActive, isPending }) =>
             cn('hover:ui-underline', {
-              'ui-text-primary': isActive,
+              'ui-underline': isActive,
               'ui-animate-pulse': isPending,
             })
           }

@@ -39,6 +39,7 @@ const Widget = forwardRef<HTMLDivElement, WidgetProps>(
   ) => {
     const {
       city,
+      temperature,
       description,
       icon,
       range: { min, max },
@@ -67,7 +68,7 @@ const Widget = forwardRef<HTMLDivElement, WidgetProps>(
         </header>
         <Card className="ui-mb-4">
           <Today
-            temperature="20"
+            temperature={String(temperature)}
             icon={icon}
             range={{ min: String(min), max: String(max) }}
             unit={unit}

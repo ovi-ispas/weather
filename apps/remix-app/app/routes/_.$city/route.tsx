@@ -1,8 +1,15 @@
-import { LoaderFunctionArgs, defer } from '@remix-run/node'
+import { LoaderFunctionArgs, MetaFunction, defer } from '@remix-run/node'
 import { Await, useLoaderData, useNavigation } from '@remix-run/react'
 import { getCoords, getCurrentWeather, getForecast } from './helpers'
 import { Forecast, Widget } from '~ui'
 import { Suspense } from 'react'
+
+export const meta: MetaFunction = ({ params }) => {
+  return [
+    { title: `${capitalize(params.city ?? '')} | Weather App` },
+    { description: `Weather in ${capitalize(params.city ?? '')}` },
+  ]
+}
 
 export async function loader({ params, request }: LoaderFunctionArgs) {
   const url = new URL(request.url)
@@ -67,4 +74,8 @@ export default function City() {
       </Widget>
     </div>
   )
+}
+
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }
